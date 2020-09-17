@@ -1,40 +1,34 @@
     document.addEventListener("DOMContentLoaded", function() {
 
         const header = document.querySelector("#header");
-        console.log("Here's your header:", header);
-        header.style.color = "red";
+        header.style.color = "red"
+
+
+
+    function renderPlayer(playerArray){
+        for(const player of playerArray){
+        const playerDiv = document.createElement('div')
+        playerDiv.classList.add("player")
+        playerDiv.dataset.number = `${player.number}`
+        playerDiv.innerHTML = `<h3> ${player.name} (<em>${player.nickname}</em> </h3>
+        <img src="${player.photo}" alt= ${player.name}> `
+      
+
+        const playerContainer = document.querySelector('.player-container')
+        playerContainer.append(playerDiv)
+        }
+    }
+    
+   
+
+
+    
+
 
     })
 
-
-
-
-    /***** Deliverable 3 *****/
-
-    console.log("PLAYERS array looks like this:", PLAYERS)
-    debugger
-
-    function renderPlayers(PLAYERS) {
-        const playersLi = document.createElement('li')
-
-        for (const player in PLAYERS) {
-            playersLi.innerHTML = `
-                <div class="player" data-number= ${PLAYERS.number}>
-                <h3>
-                    ${PLAYERS.name} (<em>${PLAYERS.nickname}</em></h3>
-                        <img src="${PLAYERS.photo} 
-                        </div> `
-        }
-        playerDiv = document.querySelector('div.player-container')
-
-        // playerDiv.append(playersLi)
-    }
+            /***** Deliverable 4 *****/
 
 
 
 
-
-    renderPlayers(PLAYERS)
-
-
-    /***** Deliverable 4 *****/
